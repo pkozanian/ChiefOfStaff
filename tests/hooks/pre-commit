@@ -1,0 +1,15 @@
+#!/bin/sh
+# Chief of Staff pre-commit hook — runs the deterministic structural suite and blocks the commit on
+# failure.
+#
+# Install (per clone; git hooks are not cloned):
+#   git config core.hooksPath tests/hooks
+#
+# If a check fails, fix the reported issue (e.g. name a new functional file's behaviors in
+# tests/behaviors.md), then commit again.
+root="$(git rev-parse --show-toplevel)"
+python3 "$root/tests/run.py" || {
+    echo ""
+    echo "pre-commit: structural tests failed — commit blocked. Fix the above and retry."
+    exit 1
+}

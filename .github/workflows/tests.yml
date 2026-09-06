@@ -1,0 +1,32 @@
+name: tests
+
+# `push` carried no branch filter, which means it also matched tags: pushing vX.Y.Z started this
+# suite alongside release.yml, and release.yml runs the same suite itself before it publishes. Every
+# release therefore ran it twice. A `branches` filter excludes tags, so the tag path is left with
+# the run that actually gates the Release.
+#
+# main keeps its push trigger. Nothing else checks a commit that lands there, and a release is cut
+# from whatever is sitting there when the tag goes up. pull_request is here for the same reason one
+# step earlier: check it before it lands, not after.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  structural:
+    name: Structural tests
+    # Every job in this repo carries this pin, and check #14 asserts it. The tree is developed
+    # elsewhere before it lands here; the pin keeps these workflows from running anywhere but the
+    # repository they are written for.
+    if: ${{ github.repository == 'pkozanian/ChiefOfStaff' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so `git check-ignore` works
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run structural suite
+        run: python3 tests/run.py

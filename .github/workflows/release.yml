@@ -1,0 +1,87 @@
+name: release
+
+# Publish an executive distributable ZIP as a GitHub Release when a version tag is pushed.
+#
+# Tag a release as `vX.Y.Z` matching `src/VERSION` (e.g. `git tag v0.2.0 && git push origin v0.2.0`).
+# The tag must match a clean VERSION — this refuses a `-dev` build.
+#
+# This publishes the Release and stops. The website serves the download from its own copy and pulls a
+# release when someone dispatches its `publish-release.yml`, so **a green run here does not put the
+# release in front of anyone.** See CONTRIBUTING.md → Releasing.
+on:
+  push:
+    tags:
+      - 'v*'
+  # Manual re-run from the Actions tab: pick an existing release tag (vX.Y.Z) as the ref so the
+  # tag↔VERSION check passes. The tag-push trigger above is the normal path.
+  #
+  # A dispatch runs the workflow AS IT EXISTED AT THAT REF, so re-running an old tag runs an older
+  # shape of this file. Only tags from v0.28.0 on carry this one.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # Every job in this repo carries this pin, and check #14 asserts it. The tree is developed
+    # elsewhere before it lands here; the pin keeps these workflows from running anywhere but the
+    # repository they are written for.
+    if: ${{ github.repository == 'pkozanian/ChiefOfStaff' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history: the structural suite uses `git check-ignore` and `git ls-files`.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify tag matches a clean VERSION
+        run: |
+          ver="$(cat src/VERSION)"
+          case "$ver" in
+            *-*) echo "::error::VERSION ($ver) is a -dev build. Drop the -dev suffix and rename the CHANGELOG ## [Unreleased] section to the release header before tagging."; exit 1 ;;
+          esac
+          tag="${GITHUB_REF_NAME#v}"
+          if [ "$tag" != "$ver" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match VERSION ($ver). Tag the release as v$ver (or run this workflow from the v$ver tag)."
+            exit 1
+          fi
+
+      # A release is permanent. It should never be cut from a tree that fails here.
+      - name: Structural suite
+        run: python3 tests/run.py
+
+      - name: Build distributable ZIP
+        run: bash scripts/build-dist.sh
+
+      # Notes come from the CHANGELOG, not from GitHub's generated notes: this repo's history is one
+      # commit per change with no PRs behind it, so generated notes would say nothing.
+      #
+      # Re-runnable on purpose — the documented recovery for a half-finished release is to dispatch
+      # this workflow again, so an existing Release is edited rather than treated as an error.
+      - name: Publish the GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          ver="${GITHUB_REF_NAME#v}"
+          title="$(bash scripts/changelog-section.sh --title "$ver")"
+          bash scripts/changelog-section.sh "$ver" > "${RUNNER_TEMP}/notes.md"
+          # cos.zip = the canonical flat archive (prompt boot + what /update applies).
+          # ChiefOfStaff.zip = the same release, nested, for installs predating 0.20.0.
+          # VERSION + CHANGELOG.md = tiny assets the boot update-check reads, so the check keys off
+          # the actual latest RELEASE (not the main branch) — same source of truth as the ZIP.
+          assets=(dist/cos.zip dist/ChiefOfStaff.zip src/VERSION src/CHANGELOG.md)
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release edit "$GITHUB_REF_NAME" --title "$title" --notes-file "${RUNNER_TEMP}/notes.md"
+            gh release upload "$GITHUB_REF_NAME" "${assets[@]}" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "${assets[@]}" \
+              --title "$title" --notes-file "${RUNNER_TEMP}/notes.md"
+          fi
+          echo "Released ${GITHUB_REF_NAME}. It is NOT live until the site pulls it —"
+          echo "dispatch publish-release.yml in the website repo."

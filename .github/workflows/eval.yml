@@ -1,0 +1,67 @@
+name: evals
+
+# Non-deterministic behavioral evals (drive the real agent via `claude -p`). Never on push —
+# non-blocking, and every run spends real tokens.
+#
+# Dispatch-only, deliberately. This used to carry a weekly cron; a scheduled run that spends money in
+# a repo nobody is watching is a bill waiting to be discovered, and the suite is normally run locally
+# (`python3 tests/eval/run_eval.py`) where its output can be read as it goes. Dispatch it here when
+# you want a clean-room run.
+#
+# Requires `CLAUDE_CODE_OAUTH_TOKEN` as a secret. Without it, this fails loudly when dispatched
+# rather than quietly on a timer.
+
+on:
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: "scenario key to run, or 'all'"
+        default: all
+
+jobs:
+  eval:
+    name: Behavioral evals
+    # Two pins, and both are about money.
+    #
+    # The repository pin is on every job here, and check #14 asserts it: these workflows run in one
+    # place and nowhere else.
+    #
+    # The actor pin is specific to this workflow. Dispatching already requires write access, so on a
+    # private repo it changes nothing today — it is here for the day this repo is public or gains a
+    # collaborator, when "who can spend a full eval sweep" stops being the same question as "who can
+    # push". A run costs real tokens and nothing rate-limits it.
+    #
+    # A `gate` job used to sit in front of this one, deciding whether the weekly cron had anything
+    # worth running on. With the cron gone, a dispatch always said yes — so it was machinery whose
+    # only answer was "run".
+    if: ${{ github.repository == 'pkozanian/ChiefOfStaff' && github.actor == 'pkozanian' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install Claude Code
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Verify CLI
+        run: claude --version
+      - name: Run evals
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Pinned, not inherited. `run_eval.py` already defaults to sonnet for BOTH the scenario
+          # agent and the judge, but a default is a thing that can be changed by someone who is not
+          # thinking about this workflow's bill. Stating it here means the model a CI run uses is
+          # visible in the file that pays for it. The run header prints the model it actually used —
+          # read it rather than assuming this line took effect.
+          CHIEFOFSTAFF_EVAL_MODEL: sonnet
+          PYTHONUNBUFFERED: "1"
+        run: |
+          s="${{ github.event.inputs.scenario }}"
+          if [ -n "$s" ] && [ "$s" != "all" ]; then
+            python3 tests/eval/run_eval.py --only "$s" --retries 2
+          else
+            python3 tests/eval/run_eval.py --retries 2
+          fi

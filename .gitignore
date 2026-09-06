@@ -1,0 +1,54 @@
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# --- Python (test suite) ---
+__pycache__/
+*.pyc
+
+# --- Claude Code local settings ---
+# Personal, machine-local runtime state — never shared. The `**/` prefix is load-bearing: a pattern
+# with a slash in the middle is anchored to THIS directory, so a bare `.claude/…` rule would cover the
+# repo root and silently miss `src/.claude/…` — where these files actually appear when you run Chief
+# of Staff from the source tree.
+**/.claude/settings.local.json
+**/.claude/scheduled_tasks.lock
+
+# Subagents. Split by tree, unlike the rule above: root .claude/agents/ holds the development
+# specialists — versioned, part of the build harness, reviewed like any other repo file.
+# src/.claude/agents/ is a LEGACY guard: the product stopped generating per-principal member shims in
+# 0.22.0 (brain/schemas/team-member.md -> "Why there is no subagent projection"), but an older install
+# may still have one, so keep it uncommittable. build-dist.sh strips the directory regardless.
+/src/.claude/agents/
+
+# --- Memory ---
+# src/memory/ is one principal's data and is never committed. It exists in the source tree because
+# src/ is a complete, runnable install (that's how you try a change). The rule lives HERE, not in an
+# in-folder .gitignore, so a principal can version their own memory/ in a SEPARATE git repo without a
+# committed `*` rule fighting them. A tracked .keep holds the empty folder in the ZIP — named without
+# the git prefix because it ships, and an install is a folder someone unzipped, not a checkout.
+/src/memory/*
+!/src/memory/.keep
+
+# Built distributable ZIPs (release artifacts)
+/dist/
+
+# Machine-local tooling. Every tracked file here is published, so anything that should stay private —
+# scripts wired to a personal checkout, notes, throwaway helpers — lives in here and never lands in a
+# commit. Check #16 enforces the other half of that boundary.
+/.local/
+
+# Node. This repo has no dependencies and no build step that needs any: build-dist.sh is shell plus
+# `zip`, and the structural suite is stdlib Python. The rule stays because the suite lints every
+# TRACKED .md via `git ls-files`, so one committed node_modules/ floods it with third-party READMEs —
+# that happened once (2,222 files) via `git add -A`. Anything needing npm belongs to the site repo.
+node_modules/
+
+# Subagent-driven-development scratch: the ledger, briefs and review packages it keeps, and the
+# plans/specs it writes. Working notes for one machine's sessions — never committed.
+/.superpowers/
+/docs/superpowers/
