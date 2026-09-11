@@ -42,7 +42,7 @@ principal the map you built — grouped by circle — for confirmation.
 **Bootstrap from the calendar if a connector is on.** Don't make the principal recall everyone cold.
 **If the step-2 fast-track bootstrap already ran, this step is mostly confirming/extending that draft**
 — review the people it saved (and any people-related hypotheses) and fill gaps. Otherwise, scan the last
-~1–2 months of **every connected calendar** for **frequent attendees and standing 1:1s** — **honor the
+~1 month of **every connected calendar** for **frequent attendees and standing 1:1s** — **honor the
 `bootstrap_scope` recorded at step 2** (`work-only` → scan only work calendars; `named` → only the accounts they chose; `all` → everything); if none was recorded
 because no bootstrap ran, **default to work calendars, or disclose scope in one line before scanning
 personal** (*"I'll skim your work calendars for this — want me to include personal too?"*). **In
