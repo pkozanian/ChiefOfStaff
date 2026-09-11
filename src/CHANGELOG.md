@@ -21,7 +21,7 @@ with `VERSION` and surfaces any migration notes below.
 ## [Unreleased]
 
 Work landed on `main` since the last release. `main`'s `VERSION` carries a `-dev` suffix (e.g.
-`0.36.3-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
+`0.37.0-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
 section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.md` → Releasing).
 
 _Nothing yet._
