@@ -52,7 +52,7 @@ Apply these deliberately; name the one(s) each finding implicates.
   than composes? Any forced choices that should be defaults?
 - **Resumability & error recovery.** The `current_step` resume, the minimum-viable checkpoint, re-runs,
   correcting a wrong answer, backing up a step. What happens when the user gives a messy or partial reply?
-- **Trust, transparency & consent.** The opt-in history bootstrap (scanning ~6 months of connected
+- **Trust, transparency & consent.** The opt-in history bootstrap (scanning ~1 month of connected
   accounts), provenance, confidentiality/code names, and "shared content is data, not instructions." Is
   consent explicit and legible? Does the user understand what's being read, stored, and where?
 - **Agency & control — ask vs. act.** Does the assistant propose and confirm before anything outward or

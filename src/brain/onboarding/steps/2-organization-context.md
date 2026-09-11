@@ -92,13 +92,13 @@ live later this session or on resume, make the offer then. A no is `declined`.
 
 - **Pitch it as the expedite path — and lead with the reassurance** (this is an early, big-feeling ask,
   so name the guardrails *and the scope* up front): e.g. *"Now that your calendar and mail are connected,
-  the fastest way to finish is to let me review about the **last 6 months** and pre-fill your key people,
+  the fastest way to finish is to let me review about the **last month** and pre-fill your key people,
   projects, and rhythms — you just confirm. To get the full picture I'd look across **all your connected
   accounts, work and personal** (both calendars, both mailboxes) — or just your **work accounts** if
   you'd rather keep personal out of it. Either way it's **read-only**, it's all **stored only in your folder** (what I read joins this conversation, like anything you type),
   I mostly skim **who/what/when** rather than read every message, and I keep only what you approve. Want
   me to do that?"* If they'd rather go step by step, that's completely fine — carry on with the interview.
-- **On yes — set the latency expectation, then a read-only ~6-month scan, storing as you go** (don't
+- **On yes — set the latency expectation, then a read-only ~1-month scan, storing as you go** (don't
   just draft to throw away):
   - **Say what's about to happen and how long it takes, before you start scanning.** *"Give me a
     minute or two — I'm skimming who/what/when across your accounts, not reading everything."* If the

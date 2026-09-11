@@ -21,10 +21,27 @@ with `VERSION` and surfaces any migration notes below.
 ## [Unreleased]
 
 Work landed on `main` since the last release. `main`'s `VERSION` carries a `-dev` suffix (e.g.
-`0.37.0-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
+`0.36.3-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
 section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.md` → Releasing).
 
 _Nothing yet._
+
+### Migration notes
+
+**No action required.**
+
+---
+
+## [0.36.2] — Lighter onboarding scan
+
+Onboarding's opt-in history scan now looks back about a month instead of six. It is a smaller ask up
+front, it finishes faster, and it still surfaces your standing meetings, frequent collaborators, and
+active projects — the things a recent month of calendar and mail already show.
+
+### Changed
+
+- Onboarding's step-2 history bootstrap now scans **~1 month** of connected calendar/mail history
+  instead of ~6 months. Step 3's no-bootstrap calendar fallback matches it (was ~1–2 months).
 
 ### Migration notes
 
