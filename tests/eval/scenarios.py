@@ -2102,14 +2102,29 @@ SCENARIOS: list[Scenario] = [
     ),
     Scenario(
         key="daily-brief",
-        behaviors=("PLAY-39",),
+        behaviors=("PLAY-39", "PLAY-58"),
         title="Daily-brief playbook produces a concise start-of-day brief",
         seed=seed_briefing,
         prompt="Run my daily brief.",
         graded=True,
         judge=[("is a daily brief",
                 "Is this a concise start-of-day briefing — surfacing priorities, what needs the "
-                "principal, and/or commitments due — rather than a generic answer?")],
+                "principal, and/or commitments due — rather than a generic answer?"),
+               # PLAY-58. The seeded memory is the whole world here: a Q3 roadmap with a pending
+               # pricing decision, a weekly 1:1 with Jane Doe, and two commitments. An offer to
+               # "sync with the team" or "review your inbox" traces to none of them — that is the
+               # grounding half. The floor of ONE is the other half, and it is deliberate: the
+               # suppression rule lets a real brief print no offers, but this seed does support one,
+               # so allowing zero here would let the clause pass on a brief that grew no section at
+               # all. Re-seeding this scenario means re-checking that the floor still holds.
+               ("offers are grounded and capped",
+                "Does the brief end by offering work the assistant could do — BETWEEN ONE AND THREE "
+                "offers — where every offer traces to something in this principal's seeded memory "
+                "and names what it came from? The memory supports at least one: the Q3 roadmap has "
+                "a pending pricing decision with no options recorded anywhere, the board deck is "
+                "overdue, and there is a weekly 1:1 with Jane Doe. Answer NO if there are no offers "
+                "at all, if there are more than three, or if any offer is generic assistant help "
+                "that nothing in the seeded memory supports.")],
     ),
     Scenario(
         key="weekly-retro",

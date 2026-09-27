@@ -24,7 +24,14 @@ Work landed on `main` since the last release. `main`'s `VERSION` carries a `-dev
 `0.37.0-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
 section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.md` → Releasing).
 
-_Nothing yet._
+### Added
+- **The daily brief now ends with what Chief of Staff can take off your plate.** A closing
+  **"Want me to…"** block — at most three numbered offers, each naming the work and the memory file,
+  calendar entry, or commitment row it came from: prep for a meeting with no pre-read, a nudge on an
+  overdue commitment someone else owns, a decision brief for a call with no options recorded, a
+  status ask for a project that's gone quiet. One word answers it, and "1 and 3" is a complete reply.
+  The offers that were scattered through the brief's other sections now live here, so there's one
+  place to scan for what to hand off; nothing is printed when nothing qualifies.
 
 ### Migration notes
 

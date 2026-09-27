@@ -43,13 +43,13 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `ROLE` charter/defaults/principles/voice | 22 | 8 | 14 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
-| `PLAY` deliverable playbooks | 57 | 20 | 37 |
+| `PLAY` deliverable playbooks | 58 | 21 | 37 |
 | `TEAM` virtual team | 76 | 43 | 33 |
 | `DESK` the desk write boundary | 13 | 5 | 8 |
 | `REL` updates, versioning, migrations | 39 | 24 | 15 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **491** | **240** | **251** |
+| **Total** | **492** | **241** | **251** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -355,6 +355,7 @@ change, not an implementation decision.
 | `PLAY-38` | a key result is a measurable outcome with a baseline, a target and a timeframe, owned by someone, and never a restatement of its objective | `brain/playbooks/okrs.md` | |
 | `PLAY-39` | asked for the daily brief, the brief itself comes back — a concise start-of-day briefing grounded in this principal's situation, not an offer to produce one and not a generic answer | `brain/playbooks/daily-brief.md` | eval:daily-brief |
 | `PLAY-40` | the daily brief carries its shape — a one-line bottom line, today's schedule with what needs prep, what needs the principal, due-today and overdue led by the overdue, and the top 1–3 focus | `brain/playbooks/daily-brief.md` | |
+| `PLAY-58` | the daily brief closes on at most three numbered offers of work Chief of Staff can start this turn, each citing the memory file, calendar entry or commitment row it came from — nothing inferred from what a principal in this role probably needs, and no empty section printed when nothing qualifies | `brain/playbooks/daily-brief.md` | eval:daily-brief |
 | `PLAY-41` | asked for the weekly preview, the look-forward is what comes back — upcoming meetings, decisions to land, prep and commitments coming due, grounded in this principal's situation rather than a backward recap or generic advice | `brain/playbooks/weekly-preview.md` | eval:weekly-preview |
 | `PLAY-42` | the preview names which meetings need prep and offers to prep each, and closes on the 2–3 outcomes to aim for, what to protect time for, and what to defer | `brain/playbooks/weekly-preview.md` | |
 | `PLAY-43` | asked for the weekly retro, the close-out comes back in that turn and reviews the week just past — what progressed, what closed, what slipped — rather than a forward plan | `brain/playbooks/weekly-retro.md` | eval:weekly-retro |
