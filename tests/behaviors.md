@@ -43,13 +43,13 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `ROLE` charter/defaults/principles/voice | 22 | 8 | 14 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
-| `PLAY` deliverable playbooks | 66 | 21 | 45 |
+| `PLAY` deliverable playbooks | 67 | 21 | 46 |
 | `TEAM` virtual team | 76 | 43 | 33 |
 | `DESK` the desk write boundary | 13 | 5 | 8 |
 | `REL` updates, versioning, migrations | 39 | 24 | 15 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **500** | **241** | **259** |
+| **Total** | **501** | **241** | **260** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -381,6 +381,7 @@ change, not an implementation decision.
 | `PLAY-64` | facts are settled from memory and the connectors before a round is composed; the principal is never asked for what is already written down, and no specialist is stood up mid-brainstorm | `brain/playbooks/brainstorm.md` | |
 | `PLAY-65` | a request for the call itself still gets the decision brief in that turn — brainstorm is offered alongside, never substituted | `brain/playbooks/brainstorm.md` | |
 | `PLAY-66` | an invoked brainstorm runs its rounds regardless of the interview level — that dial governs unrequested questioning only | `brain/playbooks/brainstorm.md` | |
+| `PLAY-67` | a bare `/brainstorm` opens the first round in that turn; an argument centers it on that plan, decision, or idea, and with neither it asks once what to stress-test rather than choosing a subject | `.claude/commands/brainstorm.md` | |
 
 ### `TEAM` — virtual team
 
