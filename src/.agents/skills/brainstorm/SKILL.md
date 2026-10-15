@@ -6,8 +6,10 @@ argument-hint: "[optional: the plan, decision, or idea to stress-test]"
 
 Run the brainstorm workflow now, following `brain/playbooks/brainstorm.md`.
 
-- If `$ARGUMENTS` (or the request) names the plan, decision, or idea, center on that; otherwise ask
-  what I want stress-tested — one line — and wait. Don't pick a subject for me.
+- If `$ARGUMENTS` (or the request) names the plan, decision, or idea, center on that. If the request
+  names none but our conversation already has, center on that and **say which** — one line,
+  inviting a correction. With nothing to go on at all, ask what I want stress-tested and wait.
+  **Never pick a subject silently.**
 - Settle what `memory/` and my connectors can answer **first**. Never ask me for something already
   written down.
 - Ask the **first full round in this turn**: numbered questions, a short title each, and your
