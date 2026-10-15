@@ -43,13 +43,13 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `ROLE` charter/defaults/principles/voice | 22 | 8 | 14 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
-| `PLAY` deliverable playbooks | 58 | 21 | 37 |
+| `PLAY` deliverable playbooks | 66 | 21 | 45 |
 | `TEAM` virtual team | 76 | 43 | 33 |
 | `DESK` the desk write boundary | 13 | 5 | 8 |
 | `REL` updates, versioning, migrations | 39 | 24 | 15 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **492** | **241** | **251** |
+| **Total** | **500** | **241** | **259** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -373,6 +373,14 @@ change, not an implementation decision.
 | `PLAY-56` | a request for **advice, input or an opinion** on a call trips the same chain as one phrased as a decision — the brief is produced and the log entry happens alongside it; both always-on statements of the rule carry the phrase, so one cannot drift from the other | `brain/schemas/capture-rules.md` | check eval:advice-is-a-decision |
 | `PLAY-57` | a choice Chief of Staff **inferred** from a situation the principal never framed as a decision is surfaced in one line and **never written** to `memory/decisions.md` until they agree — the test is who voiced it, and at most one is raised per turn | `brain/playbooks/decisions.md` | check eval:unnamed-decision |
 | `PLAY-55` | neither offer holds the brief — a specialist's consult is folded in inline and the fuller work-up and outreach draft are left as offers in the same turn, so `PLAY-13` still governs | `brain/playbooks/decision-brief.md` | check |
+| `PLAY-59` | an invoked brainstorm asks a full frontier round — numbered questions, each carrying a recommended answer — and waits, rather than answering its own questions or delivering a conclusion in their place | `brain/playbooks/brainstorm.md` | |
+| `PLAY-60` | every recommended answer is grounded in memory and cites it; where memory is silent it says so and still recommends, labelled as a view | `brain/playbooks/brainstorm.md` | |
+| `PLAY-61` | each round recomputes the frontier — a question whose prerequisite is still open is held for a later round, and a question left unanswered is never treated as settled | `brain/playbooks/brainstorm.md` | |
+| `PLAY-62` | the loop ends when the frontier is empty or the moment the principal calls it, closing with a synthesis of what is settled, what is still open, and the assumptions now explicit | `brain/playbooks/brainstorm.md` | |
+| `PLAY-63` | nothing reaches memory from a brainstorm without the principal's OK — the decision-brief handoff and any capture are offers | `brain/playbooks/brainstorm.md` | |
+| `PLAY-64` | facts are settled from memory and the connectors before a round is composed; the principal is never asked for what is already written down, and no specialist is stood up mid-brainstorm | `brain/playbooks/brainstorm.md` | |
+| `PLAY-65` | a request for the call itself still gets the decision brief in that turn — brainstorm is offered alongside, never substituted | `brain/playbooks/brainstorm.md` | |
+| `PLAY-66` | an invoked brainstorm runs its rounds regardless of the interview level — that dial governs unrequested questioning only | `brain/playbooks/brainstorm.md` | |
 
 ### `TEAM` — virtual team
 
