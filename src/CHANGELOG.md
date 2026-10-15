@@ -32,10 +32,23 @@ section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.
   status ask for a project that's gone quiet. One word answers it, and "1 and 3" is a complete reply.
   The offers that were scattered through the brief's other sections now live here, so there's one
   place to scan for what to hand off; nothing is printed when nothing qualifies.
+- **Hand over a half-formed plan and have it questioned instead of agreed with.** Ask Chief of Staff
+  to poke holes in something — a plan, a decision, an idea — and it works through it in rounds:
+  numbered questions, each carrying its own recommended answer drawn from your memory, asked a round
+  at a time rather than all at once. Answers reshape what it asks next; "enough, give me the brief"
+  ends it and it synthesizes what's settled, what's still open, and the assumptions now explicit.
+  Nothing reaches memory without your OK. A request for a decision brief still gets the brief.
 
 ### Migration notes
 
-**No action required.**
+**Optional convergence.**
+
+- **`preference:interview-level`** — the principal has been offered the interview level
+  (`assume` / `targeted` / `thorough`) once. Keeping `targeted` writes nothing; a change is an
+  `extend` override at `memory/overrides/role/principles.md` plus its `memory/overrides/index.md`
+  line. A principal who skips it keeps the shipped default and is not asked again. Put it alongside
+  the release's new capability but **framed separately** — an invoked brainstorm runs its rounds at
+  every level, so this dial governs only how much Chief of Staff questions them unasked.
 
 ---
 

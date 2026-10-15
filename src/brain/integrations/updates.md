@@ -229,7 +229,10 @@ in version order:
    migrate an orphan silently — the delete-then-copy update mechanics above would otherwise leave it
    looking like an intentional addition (see `brain/schemas/memory-file.md` → "Override files").
 8. **Offer any recommended convergence** *(optional)* — if a note suggests a `/lint` pass (e.g. to
-   annotate legacy preference bullets), offer to run it now. It doesn't block.
+   annotate legacy preference bullets), offer to run it now. A note may instead put **one question**
+   to the principal — a preference the release wants settled once, asked inside the step 5 exchange
+   with your recommended answer. Either shape **doesn't block**: advance the marker whether or not it
+   was answered, and don't raise it again.
 9. **Advance the marker.** Once the **required** steps (6 and 7) are done, set
    `onboarded_against: <VERSION>` in `memory/meta.md` and append an `update` line to `memory/ledger.md`
    (`brain/schemas/capture-rules.md` → "Action ledger") recording the upgrade and the version span

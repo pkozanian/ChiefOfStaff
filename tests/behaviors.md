@@ -46,10 +46,10 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `PLAY` deliverable playbooks | 67 | 21 | 46 |
 | `TEAM` virtual team | 76 | 43 | 33 |
 | `DESK` the desk write boundary | 13 | 5 | 8 |
-| `REL` updates, versioning, migrations | 39 | 24 | 15 |
+| `REL` updates, versioning, migrations | 40 | 24 | 16 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **502** | **241** | **261** |
+| **Total** | **503** | **241** | **262** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -526,6 +526,7 @@ change, not an implementation decision.
 | `REL-37` | a surviving statement is checked against what this folder actually contains before anything is proposed — a change to something this install does not have is not a migration for this principal | `brain/integrations/updates.md` | |
 | `REL-38` | versioned migration playbooks run in the version order of the releases pointing to them, and each is idempotent, so a multi-version jump lands where sequential upgrades would | `brain/integrations/updates.md` | |
 | `REL-39` | a subject key stated on more than one entry declares `**Supersedes X.Y.Z.**` on its newest statement — a repeated key is how an order-dependent chain is written down, and an undeclared one is how that chain collapses to its newest half in silence | `repo policy` | check |
+| `REL-40` | an optional-convergence note may put one preference question to the principal inside the migration proposal, asked once with a recommended answer; unanswered, it advances the marker and is never re-raised | `brain/integrations/updates.md` | |
 
 ### `HOST` — integrations + host parity
 
