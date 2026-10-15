@@ -39,17 +39,17 @@ a gap count as "nothing asserts these", never as "these are broken".
 | Area | Rows | Covered | Gaps |
 |------|-----:|--------:|-----:|
 | `BOOT` boot + routing | 35 | 19 | 16 |
-| `ONB` onboarding | 71 | 22 | 49 |
-| `ROLE` charter/defaults/principles/voice | 22 | 8 | 14 |
+| `ONB` onboarding | 72 | 22 | 50 |
+| `ROLE` charter/defaults/principles/voice | 23 | 8 | 15 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
-| `PLAY` deliverable playbooks | 57 | 20 | 37 |
+| `PLAY` deliverable playbooks | 67 | 27 | 40 |
 | `TEAM` virtual team | 76 | 43 | 33 |
 | `DESK` the desk write boundary | 13 | 5 | 8 |
-| `REL` updates, versioning, migrations | 39 | 24 | 15 |
+| `REL` updates, versioning, migrations | 40 | 24 | 16 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **491** | **240** | **251** |
+| **Total** | **504** | **247** | **257** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -171,6 +171,7 @@ change, not an implementation decision.
 | `ONB-70` | step 2 resolves each connector category to a discovery state and records it per connector; an unresolved one is said plainly with what would resolve it; the bootstrap offer is `n/a` only on a positive state 6 for every category and `blocked` when any is inconclusive | `brain/onboarding/steps/2-organization-context.md` | |
 | `ONB-71` | Finishing audits the checklist — an untouched row is resolved now or deferred with explicit agreement — and shows a completion summary naming the deferred and blocked rows with the plain-words way to pick them up | `brain/onboarding/flow.md` | eval:onboard-terse |
 | `ONB-72` | in work mode the OKR question is always asked — an IC who does not run on them says so in a word; the agent never decides it for them | `brain/onboarding/steps/4-priorities-projects.md` | eval:onboard-terse |
+| `ONB-73` | the step 5a defaults menu includes the interview level, so a new principal chooses it rather than inheriting it unasked | `brain/onboarding/steps/5-working-preferences.md` | |
 
 ### `ROLE` — charter/defaults/principles/voice
 
@@ -198,6 +199,7 @@ change, not an implementation decision.
 | `ROLE-20` | the overlay's precedence is exact: `replace` supersedes the brain file, `extend` loads the brain file first and amends it, and where they conflict the override wins | `CHIEFOFSTAFF.md` | |
 | `ROLE-21` | a twice-overridden recommendation is folded into preferences, so the retirement outlives the session that noticed the pattern | `brain/role/principles.md` | |
 | `ROLE-22` | specialists propose durable facts and Chief of Staff verifies and integrates them — a specialist never writes shared memory or the confidential registry | `brain/schemas/team-member.md` | |
+| `ROLE-23` | the one-batch interview ceiling exempts a brainstorm the principal invoked, where rounds of questions are the deliverable and the principal ends them | `brain/role/principles.md` | |
 
 ### `MEM` — memory + retrieval
 
@@ -355,6 +357,7 @@ change, not an implementation decision.
 | `PLAY-38` | a key result is a measurable outcome with a baseline, a target and a timeframe, owned by someone, and never a restatement of its objective | `brain/playbooks/okrs.md` | |
 | `PLAY-39` | asked for the daily brief, the brief itself comes back — a concise start-of-day briefing grounded in this principal's situation, not an offer to produce one and not a generic answer | `brain/playbooks/daily-brief.md` | eval:daily-brief |
 | `PLAY-40` | the daily brief carries its shape — a one-line bottom line, today's schedule with what needs prep, what needs the principal, due-today and overdue led by the overdue, and the top 1–3 focus | `brain/playbooks/daily-brief.md` | |
+| `PLAY-58` | the daily brief closes on at most three numbered offers of work Chief of Staff can start this turn, each citing the memory file, calendar entry or commitment row it came from — nothing inferred from what a principal in this role probably needs, and no empty section printed when nothing qualifies | `brain/playbooks/daily-brief.md` | eval:daily-brief |
 | `PLAY-41` | asked for the weekly preview, the look-forward is what comes back — upcoming meetings, decisions to land, prep and commitments coming due, grounded in this principal's situation rather than a backward recap or generic advice | `brain/playbooks/weekly-preview.md` | eval:weekly-preview |
 | `PLAY-42` | the preview names which meetings need prep and offers to prep each, and closes on the 2–3 outcomes to aim for, what to protect time for, and what to defer | `brain/playbooks/weekly-preview.md` | |
 | `PLAY-43` | asked for the weekly retro, the close-out comes back in that turn and reviews the week just past — what progressed, what closed, what slipped — rather than a forward plan | `brain/playbooks/weekly-retro.md` | eval:weekly-retro |
@@ -372,6 +375,15 @@ change, not an implementation decision.
 | `PLAY-56` | a request for **advice, input or an opinion** on a call trips the same chain as one phrased as a decision — the brief is produced and the log entry happens alongside it; both always-on statements of the rule carry the phrase, so one cannot drift from the other | `brain/schemas/capture-rules.md` | check eval:advice-is-a-decision |
 | `PLAY-57` | a choice Chief of Staff **inferred** from a situation the principal never framed as a decision is surfaced in one line and **never written** to `memory/decisions.md` until they agree — the test is who voiced it, and at most one is raised per turn | `brain/playbooks/decisions.md` | check eval:unnamed-decision |
 | `PLAY-55` | neither offer holds the brief — a specialist's consult is folded in inline and the fuller work-up and outreach draft are left as offers in the same turn, so `PLAY-13` still governs | `brain/playbooks/decision-brief.md` | check |
+| `PLAY-59` | an invoked brainstorm asks a full frontier round — numbered questions, each carrying a recommended answer — and waits, rather than answering its own questions or delivering a conclusion in their place | `brain/playbooks/brainstorm.md` | eval:brainstorm |
+| `PLAY-60` | every recommended answer is grounded in memory and cites it; where memory is silent it says so and still recommends, labelled as a view | `brain/playbooks/brainstorm.md` | eval:brainstorm |
+| `PLAY-61` | each round recomputes the frontier — a question whose prerequisite is still open is held for a later round, and a question left unanswered is never treated as settled | `brain/playbooks/brainstorm.md` | eval:brainstorm — the `holds-unanswered` judge covers the unanswered half; frontier recomputation itself is untested |
+| `PLAY-62` | the loop ends when the frontier is empty or the moment the principal calls it, closing with a synthesis of what is settled, what is still open, and the assumptions now explicit | `brain/playbooks/brainstorm.md` | eval:brainstorm |
+| `PLAY-63` | nothing of the principal's own content reaches memory from a brainstorm without their OK — the decision-brief handoff and any capture are offers; the run's ledger line is bookkeeping and needs no permission | `brain/playbooks/brainstorm.md` | |
+| `PLAY-64` | facts are settled from memory and the connectors before a round is composed; the principal is never asked for what is already written down, and no specialist is stood up mid-brainstorm | `brain/playbooks/brainstorm.md` | |
+| `PLAY-65` | a request for the call itself still gets the decision brief in that turn — brainstorm is offered alongside, never substituted | `brain/playbooks/brainstorm.md` | eval:brainstorm-vs-decision-brief |
+| `PLAY-66` | an invoked brainstorm runs its rounds regardless of the interview level — that dial governs unrequested questioning only | `brain/playbooks/brainstorm.md` | |
+| `PLAY-67` | `/brainstorm` opens the first round in that turn once it has a subject; an argument centers it on that plan, decision, or idea, and with no argument it inherits the one the conversation already named — saying which and inviting a correction — or asks when there is none, never choosing one silently | `.claude/commands/brainstorm.md` | eval:brainstorm eval:brainstorm-vs-decision-brief — `brain/index.md` hooks the same playbook on the request phrasings, so this fences that a bare `/brainstorm` produces the round, not this file in isolation |
 
 ### `TEAM` — virtual team
 
@@ -515,6 +527,7 @@ change, not an implementation decision.
 | `REL-37` | a surviving statement is checked against what this folder actually contains before anything is proposed — a change to something this install does not have is not a migration for this principal | `brain/integrations/updates.md` | |
 | `REL-38` | versioned migration playbooks run in the version order of the releases pointing to them, and each is idempotent, so a multi-version jump lands where sequential upgrades would | `brain/integrations/updates.md` | |
 | `REL-39` | a subject key stated on more than one entry declares `**Supersedes X.Y.Z.**` on its newest statement — a repeated key is how an order-dependent chain is written down, and an undeclared one is how that chain collapses to its newest half in silence | `repo policy` | check |
+| `REL-40` | an optional-convergence note may put one preference question to the principal inside the migration proposal, asked once with a recommended answer; unanswered, it advances the marker and is never re-raised | `brain/integrations/updates.md` | |
 
 ### `HOST` — integrations + host parity
 

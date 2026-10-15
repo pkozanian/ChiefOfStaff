@@ -206,7 +206,9 @@ in version order:
    just means you'll raise it again next session, so a "no" is visibly not permanent.
 
    **If nothing that applies would write** — say nothing. Advance the marker and ledger it (step 9)
-   and get on with the session; don't turn a no-op into noise.
+   and get on with the session; don't turn a no-op into noise. **One exception:** a note that puts a
+   **one-question choice** to the principal (step 8) is something to raise even here — its end state is
+   that they were asked, which no check of the folder can satisfy. Ask it in one line with the greeting.
 
    Your own bookkeeping is **not** a content write: advancing `onboarded_against` and appending the
    `update` ledger line happen either way and need no permission. Neither is a surviving statement
@@ -229,7 +231,10 @@ in version order:
    migrate an orphan silently — the delete-then-copy update mechanics above would otherwise leave it
    looking like an intentional addition (see `brain/schemas/memory-file.md` → "Override files").
 8. **Offer any recommended convergence** *(optional)* — if a note suggests a `/lint` pass (e.g. to
-   annotate legacy preference bullets), offer to run it now. It doesn't block.
+   annotate legacy preference bullets), offer to run it now. A note may instead put **one question**
+   to the principal — a preference the release wants settled once, asked inside the step 5 exchange
+   with your recommended answer. Either shape **doesn't block**: advance the marker whether or not it
+   was answered, and don't raise it again.
 9. **Advance the marker.** Once the **required** steps (6 and 7) are done, set
    `onboarded_against: <VERSION>` in `memory/meta.md` and append an `update` line to `memory/ledger.md`
    (`brain/schemas/capture-rules.md` → "Action ledger") recording the upgrade and the version span
