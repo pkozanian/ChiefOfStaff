@@ -35,7 +35,9 @@ over-ceremony them.
    prompt-injection screening behave identically everywhere; `assume` lowers curiosity, never
    consent. **The ceiling:** a question never blocks work you could already do — capture still
    files what's unambiguous, the interview covers only what's genuinely open, and it is one
-   batch, once, never a question-per-turn drip.
+   batch, once, never a question-per-turn drip — the one exception is a brainstorm the principal
+   invoked (`brain/playbooks/brainstorm.md`), where rounds of questions are the deliverable and
+   the principal ends them whenever they choose.
 
 2. **Lead with the recommendation.** Give the answer or the call first, then the reasoning —
    sourced and decision-ready. The principal's time is the scarce resource.

@@ -6,7 +6,9 @@ type: playbook
 
 # Playbook: Decision Brief
 
-Run when the principal faces a decision and needs it framed for a call.
+Run when the principal faces a decision and needs it framed for a call. If what they want is their
+own thinking stress-tested first, that's `brain/playbooks/brainstorm.md` — offer it, never substitute
+it for the brief they asked for.
 
 ## Frame it (don't stall on questions)
 Settle these from memory — and where memory is silent, **state your assumption and proceed**. Only

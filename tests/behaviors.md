@@ -40,7 +40,7 @@ a gap count as "nothing asserts these", never as "these are broken".
 |------|-----:|--------:|-----:|
 | `BOOT` boot + routing | 35 | 19 | 16 |
 | `ONB` onboarding | 71 | 22 | 49 |
-| `ROLE` charter/defaults/principles/voice | 22 | 8 | 14 |
+| `ROLE` charter/defaults/principles/voice | 23 | 8 | 15 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
 | `PLAY` deliverable playbooks | 67 | 21 | 46 |
@@ -49,7 +49,7 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `REL` updates, versioning, migrations | 39 | 24 | 15 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **501** | **241** | **260** |
+| **Total** | **502** | **241** | **261** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -198,6 +198,7 @@ change, not an implementation decision.
 | `ROLE-20` | the overlay's precedence is exact: `replace` supersedes the brain file, `extend` loads the brain file first and amends it, and where they conflict the override wins | `CHIEFOFSTAFF.md` | |
 | `ROLE-21` | a twice-overridden recommendation is folded into preferences, so the retirement outlives the session that noticed the pattern | `brain/role/principles.md` | |
 | `ROLE-22` | specialists propose durable facts and Chief of Staff verifies and integrates them — a specialist never writes shared memory or the confidential registry | `brain/schemas/team-member.md` | |
+| `ROLE-23` | the one-batch interview ceiling exempts a brainstorm the principal invoked, where rounds of questions are the deliverable and the principal ends them | `brain/role/principles.md` | |
 
 ### `MEM` — memory + retrieval
 
