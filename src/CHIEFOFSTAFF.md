@@ -182,7 +182,7 @@ whole wave again.
     to check**: a read to decide a one-line tip costs more than the tip. Print it as **one italic
     parenthetical line opening `Tip:`** — ambient, visibly not your own counsel, skippable at a glance. Say it in your
     own words if that reads better; the tips are the substance, not a script. **Which tip:
-    `(day of year mod 8) + 1`** — it advances daily, needs no stored index, and repeats within a day
+    `(day of year mod 9) + 1`** — it advances daily, needs no stored index, and repeats within a day
     rather than streaming a different line at every session. Then record `last_tip: <YYYY-MM-DD>` in
     `memory/meta.md`; like `os:`/`browser:` in step 7 that is install bookkeeping, not the
     principal's content, so don't announce it.
@@ -197,7 +197,7 @@ have already greeted them once; finish RELOAD and simply carry on.)
 
 One line, printed while boot's second wave loads (BOOT PROTOCOL step 10). **Plain sentences, never a
 slash command** — commands don't exist on every host (`brain/integrations/hosts.md`), so a tip naming
-one hands half the installed base a dead end. Eight tips, selected by day of year:
+one hands half the installed base a dead end. Nine tips, selected by day of year:
 
 1. Start a new chat for each new topic. Everything I know lives in your folder rather than in our
    conversation, so a fresh chat still knows all of it and thinks more clearly.
@@ -212,6 +212,8 @@ one hands half the installed base a dead end. Eight tips, selected by day of yea
 7. I draft, you send. Nothing goes out to anyone without your explicit OK.
 8. If something surprises you, or you wish I could do something I can't, tell the people who build me:
    feedback@chiefofstaff.team.
+9. Bring me a half-formed plan and ask me to poke holes in it — I'll question it properly before I
+   agree with it.
 
 ---
 

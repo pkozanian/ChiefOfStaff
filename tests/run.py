@@ -2098,8 +2098,8 @@ def test_loading_tips() -> None:
         return
     block = text.split("## LOADING TIPS", 1)[1].split("\n## ", 1)[0]
     tips = [ln for ln in block.splitlines() if re.match(r"^\d+\. ", ln)]
-    check("there are 8 tips", len(tips) == 8,
-          f"found {len(tips)} — boot step 10 divides by 8, so the count is load-bearing",
+    check("there are 9 tips", len(tips) == 9,
+          f"found {len(tips)} — boot step 10 divides by 9, so the count is load-bearing",
           behavior="BOOT-31")
     named = [t for t in tips if re.search(r"(?<![\w/])/[a-z][a-z-]+\b", t)]
     check("no tip names a slash command", not named,
