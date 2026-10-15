@@ -38,4 +38,5 @@ version from your `VERSION` file.
 
 <sub>Chief of Staff is MIT-licensed; see [`LICENSE.md`](LICENSE.md). Everything in `memory/`
 is yours and isn't covered by it. Team-member methods credit the MIT-licensed
-[agency-agents](https://github.com/msitarzewski/agency-agents) catalog.</sub>
+[agency-agents](https://github.com/msitarzewski/agency-agents) catalog. The brainstorming method
+adapts the MIT-licensed [mattpocock/skills](https://github.com/mattpocock/skills) grilling skill.</sub>
