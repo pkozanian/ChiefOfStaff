@@ -40,8 +40,9 @@ a catalog of what's tunable, not a second copy of them.
   what changes the outcome; **thorough** = interview first on substantial ambiguous work. The
   consent confirmations (sending, overwriting a conflicting memory, desk deletions) are not a
   level — they hold everywhere. Team members inherit the global level; a specialist's charter
-  `interview:` field overrides it for that specialist (`brain/schemas/team-member.md`). See
-  `brain/role/principles.md` → "The interview level".
+  `interview:` field overrides it for that specialist (`brain/schemas/team-member.md`). A brainstorm
+  the principal invoked (`brain/playbooks/brainstorm.md`) runs its rounds at every level — this dial
+  governs unrequested questioning only. See `brain/role/principles.md` → "The interview level".
 
 *(File intake isn't a knob — a document shared in the chat is always **auto-intaked inline**, with
 prompt-injection screening built in. See `brain/schemas/capture-rules.md`.)*

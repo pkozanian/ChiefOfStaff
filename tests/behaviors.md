@@ -39,7 +39,7 @@ a gap count as "nothing asserts these", never as "these are broken".
 | Area | Rows | Covered | Gaps |
 |------|-----:|--------:|-----:|
 | `BOOT` boot + routing | 35 | 19 | 16 |
-| `ONB` onboarding | 71 | 22 | 49 |
+| `ONB` onboarding | 72 | 22 | 50 |
 | `ROLE` charter/defaults/principles/voice | 23 | 8 | 15 |
 | `MEM` memory + retrieval | 61 | 32 | 29 |
 | `CAP` capture + confidentiality | 41 | 14 | 27 |
@@ -49,7 +49,7 @@ a gap count as "nothing asserts these", never as "these are broken".
 | `REL` updates, versioning, migrations | 40 | 24 | 16 |
 | `HOST` integrations + host parity | 37 | 14 | 23 |
 | `REPO` conformance + dev-repo invariants | 39 | 39 | 0 |
-| **Total** | **503** | **241** | **262** |
+| **Total** | **504** | **241** | **263** |
 
 Every area is now authored. **Read a covered cell with the `check(fixture)` caveat above**: 22 of
 `TEAM`'s 38 and 11 of `ONB`'s 22 rest on a fixture rather than on shipped output, as does `MEM`'s one
@@ -171,6 +171,7 @@ change, not an implementation decision.
 | `ONB-70` | step 2 resolves each connector category to a discovery state and records it per connector; an unresolved one is said plainly with what would resolve it; the bootstrap offer is `n/a` only on a positive state 6 for every category and `blocked` when any is inconclusive | `brain/onboarding/steps/2-organization-context.md` | |
 | `ONB-71` | Finishing audits the checklist — an untouched row is resolved now or deferred with explicit agreement — and shows a completion summary naming the deferred and blocked rows with the plain-words way to pick them up | `brain/onboarding/flow.md` | eval:onboard-terse |
 | `ONB-72` | in work mode the OKR question is always asked — an IC who does not run on them says so in a word; the agent never decides it for them | `brain/onboarding/steps/4-priorities-projects.md` | eval:onboard-terse |
+| `ONB-73` | the step 5a defaults menu includes the interview level, so a new principal chooses it rather than inheriting it unasked | `brain/onboarding/steps/5-working-preferences.md` | |
 
 ### `ROLE` — charter/defaults/principles/voice
 
