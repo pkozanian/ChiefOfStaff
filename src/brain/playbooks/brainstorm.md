@@ -15,6 +15,16 @@ grill you on it first — which?"*
 Method adapted from the MIT-licensed `grilling` skill by Matt Pocock
 (https://github.com/mattpocock/skills).
 
+## Settle the subject first
+
+**Never pick a subject silently.** If the request names the plan, decision, or idea, center on that.
+If it names none but the conversation already has, center on that and **say which** — one line,
+inviting a correction. With nothing to go on at all, ask what they want stress-tested and wait.
+
+**Say how this works, once, as the first round opens:** answers come back in rounds, and *"enough,
+give me the brief"* ends it whenever they like. A principal who isn't told the escape hatch exists
+can't use it.
+
 ## The loop
 
 1. **Build the tree.** Decompose what they brought into the decisions it actually contains, and note
@@ -67,7 +77,9 @@ principal when they *haven't* asked; here they have.
 
 - **Offer, never do.** If a call is now due, offer the decision brief
   (`brain/playbooks/decision-brief.md`). If something durable surfaced, offer to capture it — a
-  project memory file, a row in `memory/decisions.md`, a commitment. **Nothing reaches memory without
-  their OK**, and anything added updates `memory/index.md`.
+  project memory file, a row in `memory/decisions.md`, a commitment. **Nothing of theirs reaches memory
+  without their OK**, and anything added updates `memory/index.md`. The run's own ledger line below is
+  bookkeeping, not their content (`brain/integrations/updates.md` draws the same line) — it needs no
+  permission and isn't announced.
 - **Ledger.** Append one `brainstorm` line to `memory/ledger.md` — the subject and what the rounds
   settled (`brain/schemas/capture-rules.md` → "Action ledger").

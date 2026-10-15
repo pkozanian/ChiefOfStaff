@@ -37,7 +37,7 @@ section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.
   numbered questions, each carrying its own recommended answer drawn from your memory, asked a round
   at a time rather than all at once. Answers reshape what it asks next; "enough, give me the brief"
   ends it and it synthesizes what's settled, what's still open, and the assumptions now explicit.
-  Nothing reaches memory without your OK. A request for a decision brief still gets the brief.
+  Nothing of yours reaches memory without your OK. A request for a decision brief still gets the brief.
 
 ### Migration notes
 

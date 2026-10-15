@@ -16,4 +16,4 @@ Run the brainstorm workflow now, following `brain/playbooks/brainstorm.md`.
   recommended answer under every one, grounded in memory and citing it. Then stop and wait.
 - Tell me answers come back as rounds, and that I can stop it whenever I like — *"enough, give me
   the brief"* ends it and you synthesize.
-- Nothing reaches memory without my OK.
+- Nothing of mine reaches memory without my OK — noting the run itself in the ledger is bookkeeping.

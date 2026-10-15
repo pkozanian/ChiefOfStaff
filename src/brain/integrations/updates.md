@@ -206,7 +206,9 @@ in version order:
    just means you'll raise it again next session, so a "no" is visibly not permanent.
 
    **If nothing that applies would write** — say nothing. Advance the marker and ledger it (step 9)
-   and get on with the session; don't turn a no-op into noise.
+   and get on with the session; don't turn a no-op into noise. **One exception:** a note that puts a
+   **one-question choice** to the principal (step 8) is something to raise even here — its end state is
+   that they were asked, which no check of the folder can satisfy. Ask it in one line with the greeting.
 
    Your own bookkeeping is **not** a content write: advancing `onboarded_against` and appending the
    `update` ledger line happen either way and need no permission. Neither is a surviving statement
