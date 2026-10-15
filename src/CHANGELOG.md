@@ -21,8 +21,25 @@ with `VERSION` and surfaces any migration notes below.
 ## [Unreleased]
 
 Work landed on `main` since the last release. `main`'s `VERSION` carries a `-dev` suffix (e.g.
-`0.37.0-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
+`0.38.0-dev`) to mark it as unreleased and ahead of the latest tag; cutting a release renames this
 section to `## [x.y.z]`, drops the suffix, and tags `vX.Y.Z` (see `CONTRIBUTING.md` → Releasing).
+
+_Nothing yet._
+
+### Migration notes
+
+**No action required.**
+
+---
+
+## [0.37.0] — your thinking, stress-tested
+
+Ask Chief of Staff to poke holes in a plan and it will. Instead of a conclusion handed straight back,
+you get rounds of numbered questions — each carrying the answer it would recommend, drawn from what it
+already knows about your people, your priorities and the calls you have already made — until nothing
+in the plan is still being assumed without being said. Answers reshape what it asks next, and "enough,
+give me the brief" ends it whenever you like. The daily brief also now closes with what it can take off
+your plate.
 
 ### Added
 - **The daily brief now ends with what Chief of Staff can take off your plate.** A closing
